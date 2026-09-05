@@ -85,6 +85,3 @@ The scraper uses try/except blocks so individual extraction failures do not stop
 ## Disclaimer
 
 This project is intended for educational and portfolio purposes. Users should respect the target website's terms of service and applicable laws.
-#� �f�l�i�p�k�a�r�t�-�e�c�o�m�m�e�r�c�e�-�s�c�r�a�p�e�r�
-�
-�
