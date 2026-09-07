@@ -103,7 +103,7 @@ for demo_urls in all_product_list:
         }
     all_data_urls.append(Tshirt_details)
     print(f"Scrape done {len(all_data_urls)}")
-    if (len(all_data_urls) == 100):
+    if (len(all_data_urls) == 20):
         break
 df = pd.DataFrame(Tshirt_details)
 df.to_excel("Flipkart_Data_Extract_01.xlsx", index=False)
