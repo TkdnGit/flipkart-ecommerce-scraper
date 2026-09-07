@@ -34,13 +34,12 @@ def auto_scroll():
     l_height = driver.execute_script("return document.body.scrollHeight")
     for i in range(0, l_height, 300):        
         driver.execute_script(f"window.scrollTo(0, {i});")        
-        time.sleep(random.uniform(0.3, 0.8))
-        # নতুন content load হলে page height পরিবর্তন হতে পারে
+        time.sleep(random.uniform(0.3, 0.8))        
         n_height = driver.execute_script("return document.body.scrollHeight")
         if n_height != l_height:
             l_height = n_height
 
-for all_pages in range(1,3):
+for all_pages in range(1,7):
     driver.get(f"https://www.flipkart.com/search?q=t+shirts&as=on&as-show=on&otracker=AS_Query_HistoryAutoSuggest_1_1_na_na_na&otracker1=AS_Query_HistoryAutoSuggest_1_1_na_na_na&as-pos=1&as-type=HISTORY&suggestionId=t+shirts&requestId=8c1994c4-ca1c-4b65-bc76-1613537f3601&page={all_pages}")
     time.sleep(random.uniform(2, 4)) 
 
@@ -53,9 +52,6 @@ for all_pages in range(1,3):
         single_url = all_urls.get_attribute("href")
         # time.sleep(random.uniform(2.5, 4.5))
         all_product_list.add(single_url)
-   
-
-
 
 for demo_urls in all_product_list:
     driver.get(demo_urls)
@@ -77,8 +73,7 @@ for demo_urls in all_product_list:
         price = driver.find_element(By.XPATH,"(//div[contains(text(),'₹')])[6]").text
         time.sleep(random.uniform(2.5, 4.5)) 
     except:
-        price = ""
-    
+        price = ""    
 
     driver.execute_script("window.scrollTo(0, 600);")
     all_details = WebDriverWait(driver, 20).until(EC.presence_of_all_elements_located((By.XPATH, "//div[contains(text(),'All details')]")))
@@ -93,7 +88,7 @@ for demo_urls in all_product_list:
         time.sleep(random.uniform(2.5, 4.5))
     except:
         brand = ""
-    
+    product_url = demo_urls
     All_name.append(name)
     all_rating.append(Rating)
     All_price.append(price)
@@ -103,14 +98,15 @@ for demo_urls in all_product_list:
             "name": All_name,
             "Rating": all_rating,
             "price": All_price,
-            "brand": All_brand
+            "brand": All_brand,
+            "product_url": product_url
         }
     all_data_urls.append(Tshirt_details)
     print(f"Scrape done {len(all_data_urls)}")
-    if (len(all_data_urls) == 5):
+    if (len(all_data_urls) == 100):
         break
 df = pd.DataFrame(Tshirt_details)
-df.to_excel("Data_Extract_F20.xlsx", index=False)
+df.to_excel("Flipkart_Data_Extract_01.xlsx", index=False)
 driver.quit() 
 
 
