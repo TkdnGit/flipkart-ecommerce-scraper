@@ -74,7 +74,7 @@ for demo_urls in all_product_list:
         Rating = ""
     try:
         #price = driver.find_element(By.XPATH,"(//div[contains(text(),'₹')])[6]").text
-        price = driver.find_element(By.XPATH,"//div[contains(text(),'₹') and @class='v1zwn21m v1zwn20 _1psv1zeb9 _1psv1ze0']").text
+        price = driver.find_element(By.XPATH,"(//div[contains(text(),'₹')])[6]").text
         time.sleep(random.uniform(2.5, 4.5)) 
     except:
         price = ""
@@ -110,7 +110,7 @@ for demo_urls in all_product_list:
     if (len(all_data_urls) == 5):
         break
 df = pd.DataFrame(Tshirt_details)
-df.to_excel("Data_Extract_F19.xlsx", index=False)
+df.to_excel("Data_Extract_F20.xlsx", index=False)
 driver.quit() 
 
 
