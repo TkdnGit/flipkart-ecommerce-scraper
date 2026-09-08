@@ -10,7 +10,7 @@ A Python-based web scraping project for extracting e-commerce product informatio
 ✓ Pagination
 ✓ Dynamic content handling
 ✓ Product information extraction
-✓ Excel export
+✓ Excel/CSV export
 ✓ Data cleaning
 ✓ Error handling
 
@@ -76,7 +76,7 @@ python FlipKart_Project.py
 
 The scraped data is saved as:
 
-data/flipkart_products.xlsx
+data/[Flipkart_Data_Extract_Final.xlsx](https://github.com/TkdnGit/flipkart-ecommerce-scraper/blob/main/Flipkart_Data_Extract_Final.xlsx "Flipkart_Data_Extract_Final.xlsx")
 
 ## Error Handling
 
