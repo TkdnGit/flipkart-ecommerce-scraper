@@ -1,6 +1,6 @@
-# Flipkart E-commerce Product Scraper
+# Flipkart E-commerce Product scraping & Data cleansing project
 
-A Python-based web scraping project for extracting e-commerce product information using Selenium.
+A Python-based web scraping & Data cleansing project for extracting e-commerce product information using Selenium & Pandas.
 
 ## Features
 
