@@ -70,13 +70,19 @@ pip install -r requirements.txt
 
 ## Run
 
-python FlipKart_Project.py
+python FlipKart_Project_url.py
+
+python FlipKart_Data_Cleaned.py
 
 ## Output
 
 The scraped data is saved as:
 
-data/[Flipkart_Data_Extract_Final.xlsx](https://github.com/TkdnGit/flipkart-ecommerce-scraper/blob/main/Flipkart_Data_Extract_Final.xlsx "Flipkart_Data_Extract_Final.xlsx")
+[Flipkart_Data_Extract_Final.xlsx](https://github.com/TkdnGit/flipkart-ecommerce-scraper/blob/main/Flipkart_Data_Extract_Final.xlsx "Flipkart_Data_Extract_Final.xlsx")
+
+Flipkart_Data_Extract_Final_Cleaned.xlsx
+
+Flipkart_Data_Extract_Final_Cleaned.csv
 
 ## Error Handling
 
