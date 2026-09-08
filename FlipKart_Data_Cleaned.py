@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel("Flipkart_Data_Extract_01.xlsx")
+df = pd.read_excel("Flipkart_Data_Extract_Final.xlsx")
 
 df.columns = df.columns.str.strip()
 
@@ -30,6 +30,7 @@ df["Brand"] = (
 
 df["Price"] = (
     df["Price"]
+    .fillna("")
     .astype(str)
     .str.replace("₹", "", regex=False)
     .str.replace(",", "", regex=False)
@@ -43,6 +44,7 @@ df["Price"] = pd.to_numeric(
 
 df["Rating"] = (
     df["Rating"]
+    .fillna("")
     .astype(str)
     .str.extract(r"(\d+(?:\.\d+)?)")[0]
 )
@@ -72,12 +74,12 @@ df.loc[
 df = df.drop_duplicates()
 df = df.reset_index(drop=True)
 df.to_csv(
-    "Flipkart_Data_Extract_01_Cleaned.csv",
+    "Flipkart_Data_Extract_Final_Cleaned.csv",
     index=False
 )
 
 df.to_excel(
-    "Flipkart_Data_Extract_01_Cleaned.xlsx",
+    "Flipkart_Data_Extract_Final_Cleaned.xlsx",
     index=False
 )
 print("Cleaning Completed Successfully")
